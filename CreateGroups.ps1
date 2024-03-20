@@ -5,3 +5,6 @@ $group = Get-MgGroup | Where-Object {$_.DisplayName -eq "Contoso_Sales"}
 $user = Get-MgUser | Where-Object {$_.DisplayName -eq "Cody Godinez"}
 New-MgGroupMember -GroupId $group.Id -DirectoryObjectId $user.Id
 Get-MgGroupMember -GroupId $group.Id | Format-List
+
+
+Get-MgGroup  | Select-object -Property DisplayName
